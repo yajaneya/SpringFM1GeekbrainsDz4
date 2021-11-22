@@ -9,7 +9,6 @@ angular.module('app', []).controller('indexController', function ($scope, $http)
     };
 
     $scope.delProduct = function (productId) {
-            alert(productId);
 
         $http.get(contextPath + '/product/del/' + productId)
             .then(function (response) {
@@ -18,7 +17,6 @@ angular.module('app', []).controller('indexController', function ($scope, $http)
     }
 
     $scope.changeCost = function (productId, delta) {
-        alert(productId);
         $http({
             url: contextPath + '/product/change_cost',
             method: 'GET',
@@ -32,4 +30,5 @@ angular.module('app', []).controller('indexController', function ($scope, $http)
     }
 
     $scope.loadProducts();
+
 });
